@@ -17,6 +17,7 @@
     .info { padding:13px 14px 15px; }
     .name { margin:0; color:var(--purple); font-size:18px; font-weight:700; }
     .team { margin:4px 0 0; color:var(--purple); font-size:12px; font-weight:700; }
+    .reading { margin:2px 0 0; color:#374151; font-size:12px; letter-spacing:.04em; }
     .nick { margin:3px 0 12px; color:var(--muted); font-size:13px; }
     .colors { display:flex; gap:6px; flex-wrap:wrap; }
     .color { min-width:52px; padding:6px 8px; border-radius:7px; text-align:center; font-size:12px; font-weight:700; }
@@ -59,5 +60,19 @@
       <div><strong>全部公式照來源：</strong> <a href="https://ske48.co.jp/feature/profile" target="_blank" rel="noopener">SKE48 官方 Profile</a></div>
     </div>
   </main>
+  <script>
+    const readings = [
+      "AIKAWA HONOKA", "ITO KOKOMI", "KUMAZAKI HARUKA", "KURASHIMA AMI",
+      "SAKAMOTO MARIN", "NOMURA MIYO", "ARANO HIMEKA", "ITO MIKI",
+      "INOUE RUKA", "SATO KAHO", "SHINOHARA KYOKA", "ASAI YUKA",
+      "OTA AYAKA", "OMURA ANZU", "KAWAMURA YUA", "MORIMOTO KURUMI"
+    ];
+    document.querySelectorAll('.card .name').forEach((name, index) => {
+      const reading = document.createElement('p');
+      reading.className = 'reading';
+      reading.textContent = readings[index];
+      name.after(reading);
+    });
+  </script>
 </body>
 </html>
